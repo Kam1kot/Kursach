@@ -9,7 +9,7 @@
                     <a class="swiper-slide banner-wrapper" href="{{ route('products.index') }}">
                         <img loading="lazy" src="{{ asset('imgs/technical/main_banner.png') }}" alt="Geek-Print33. Уют в каждой детали">
                     </a>
-                    <a class="swiper-slide banner-wrapper" href="/">
+                    <a class="swiper-slide banner-wrapper" href="{{ route('products.show',['product' => 103]) }}">
                         <img loading="lazy" src="{{ asset('imgs/technical/main_banner_sobaka_tovar.png') }}" alt="Geek-Print33. Уют в каждой детали">
                     </a>
                 </div>
