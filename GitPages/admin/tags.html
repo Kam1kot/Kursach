@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Geek-Print33 | Админка — Теги</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+      .indie-flower-regular {
+        font-family: "Indie Flower", cursive;
+        font-weight: 400;
+        font-style: normal;
+      }
+    </style>
+    <link rel="stylesheet" href="../css/adminlte.css">
+    <link rel="stylesheet" href="../css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.2/cropper.min.css">
+  </head>
+  <body class="admin">
+    <div class="app-wrapper">
+      
+<aside class="admin-sidebar">
+  <div class="sidebar-brand">
+    <a href="../index.html" class="brand-link">
+      <img src="../imgs/technical/logo.png" class="brand-image" alt="Логотип">
+      <span class="indie-flower-regular fw-bold text-nowrap"><span class="title-geek">Geek</span>-Print33</span>
+    </a>
+  </div>
+
+  <nav>
+    <ul class="nav sidebar-menu flex-column">
+      <li class="nav-header">Администрирование</li>
+      <li class="nav-item">
+        <a href="./index.html" class="nav-link">
+          <i class="fa-solid fa-gauge"></i>
+          <span>Мониторинг</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="./info-blocks.html" class="nav-link">
+          <i class="fa-solid fa-square-poll-horizontal"></i>
+          <span>Инфо-блоки</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="./products.html" class="nav-link">
+          <i class="fa-solid fa-boxes-stacked"></i>
+          <span>Товары</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="./categories.html" class="nav-link">
+          <i class="fa-solid fa-list"></i>
+          <span>Категории</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="./tags.html" class="nav-link">
+          <i class="fa-solid fa-tags"></i>
+          <span>Теги</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="text-center admin-logout">
+    <form action="#" method="post">
+      <button type="button">Выйти</button>
+    </form>
+  </div>
+</aside>
+
+      <main class="app-main">
+        <section class="admin-products">
+  <div class="d-flex justify-content-between">
+    <header class="admin-header-bar">
+      <h1>Управление тегами</h1>
+    </header>
+    <button id="sidebarToggle" class="sidebar-toggle-btn">
+      <i class="fa-solid fa-align-justify"></i>
+    </button>
+  </div>
+  <div class="admin-products-grid">
+    <aside class="product-form">
+      <form action="#" method="post">
+        <h3>Создание тега</h3>
+        <div class="form-group mb-3">
+          <label>Название</label>
+          <input type="text" name="title" class="form-control" placeholder="PLA" required>
+        </div>
+        <button type="button" class="btn btn-save" id="saveBtn">Сохранить</button>
+      </form>
+    </aside>
+    <main class="product-list">
+      <div class="list-header">
+        <h3>Список тегов</h3>
+        <div class="search-box">
+          <input type="text" id="liveSearch" placeholder="Поиск тега…" autocomplete="off">
+          <div id="searchDrop" class="search-drop"></div>
+        </div>
+      </div>
+      <div class="product-table">
+        <div class="product-row-large">
+          <div class="product-main">
+            <strong>#PLA</strong>
+            <span class="muted">ID: 14</span>
+          </div>
+          <div class="product-actions">
+            <a href="./tag-edit.html" title="Редактировать"><i class="fa-solid fa-pen"></i></a>
+            <button type="button" title="Удалить"><i class="fa-solid fa-trash"></i></button>
+          </div>
+        </div>
+        <div class="product-row-large">
+          <div class="product-main">
+            <strong>#PETG</strong>
+            <span class="muted">ID: 15</span>
+          </div>
+          <div class="product-actions">
+            <a href="./tag-edit.html" title="Редактировать"><i class="fa-solid fa-pen"></i></a>
+            <button type="button" title="Удалить"><i class="fa-solid fa-trash"></i></button>
+          </div>
+        </div>
+        <div class="product-row-large">
+          <div class="product-main">
+            <strong>#LED</strong>
+            <span class="muted">ID: 16</span>
+          </div>
+          <div class="product-actions">
+            <a href="./tag-edit.html" title="Редактировать"><i class="fa-solid fa-pen"></i></a>
+            <button type="button" title="Удалить"><i class="fa-solid fa-trash"></i></button>
+          </div>
+        </div>
+      </div>
+      <div class="pagination">
+        <li class="page-item disabled"><span>«</span></li>
+        <li class="page-item active"><span>1</span></li>
+        <li class="page-item"><a href="#">2</a></li>
+        <li class="page-item"><a href="#">»</a></li>
+      </div>
+    </main>
+  </div>
+</section>
+      </main>
+    </div>
+    <script src="../js/adminlte.js"></script>
+    <script src="../js/sidebar-resize.js"></script>
+  </body>
+</html>

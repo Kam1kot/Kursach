@@ -1,0 +1,131 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html,
+body {
+    height: 100%;
+}
+img {
+    pointer-events: none;
+}
+html {
+    background-color: #0e0e0e;
+}
+body {
+    font-family: system-ui, sans-serif;
+    background: #0e0e0e !important;
+}
+main {
+    height: 100vh;
+    overflow: hidden;
+    flex: 1 0 auto;
+}
+footer {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+.layout {
+    position: relative;
+    display: flex;
+    min-height: 100vh;
+}
+.sidebar {
+    background-color: #1c1c1c;
+    color: white;
+    padding: 1rem;
+    min-width: 250px;
+    width: auto;
+    flex-shrink: 0;
+    overflow: auto;
+}
+.content {
+    position: relative;
+    color: white;
+    flex: 1;
+    padding-left: 0.35rem;
+}
+.search,
+.main,
+.footer {
+    margin-bottom: 1rem;
+}
+.sidebar-wrapper {
+    padding-right: 0 !important;
+}
+.sidebar .logo a {
+    color: inherit !important;
+    text-decoration: none !important;
+}
+.sidebar .logo {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 1rem;
+    width: 100%;
+}
+.sidebar .title-geek {
+    color: orange;
+}
+.sidebar .nav-item {
+    font-size: 1.2rem !important;
+    margin-bottom: 0.5rem;
+}
+.nav-treeview .nav-item {
+    margin-left: 0.75rem;
+}
+.sidebar .nav-link {
+    display: flex;
+    align-items: center;
+}
+.navbar-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding-left: 7rem;
+    padding-right: 5rem;
+
+    background-color: #1c1c1c;
+    width: 100%;
+    height: 7rem;
+}
+.navbar-wrapper .actions {
+    display: flex;
+    align-items: center;
+    gap: 4.5rem;
+}
+.navbar-wrapper .actions .wishlist,
+.navbar-wrapper .actions .cart {
+    transform: scale(1.5);
+}
+.navbar-wrapper .searchForm {
+    position: relative;
+    min-width: 50rem;
+}
+.navbar-wrapper .searchForm input::placeholder {
+    color: white;
+}
+.navbar-wrapper .searchForm input {
+    color: white !important;
+    font-size: large;
+    font-weight: 500;
+    height: 3.5rem;
+    border-color: inherit;
+    border-radius: 1rem;
+    border: none;
+    padding-left: 1.75rem;
+    background-color: #131313;
+}
+.navbar-wrapper .searchForm i {
+    opacity: 0.75;
+    position: absolute;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+}

@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Geek-Print33 | Админка — Инфо-блоки</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+      .indie-flower-regular {
+        font-family: "Indie Flower", cursive;
+        font-weight: 400;
+        font-style: normal;
+      }
+    </style>
+    <link rel="stylesheet" href="../css/adminlte.css">
+    <link rel="stylesheet" href="../css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.2/cropper.min.css">
+  </head>
+  <body class="admin">
+    <div class="app-wrapper">
+      
+<aside class="admin-sidebar">
+  <div class="sidebar-brand">
+    <a href="../index.html" class="brand-link">
+      <img src="../imgs/technical/logo.png" class="brand-image" alt="Логотип">
+      <span class="indie-flower-regular fw-bold text-nowrap"><span class="title-geek">Geek</span>-Print33</span>
+    </a>
+  </div>
+
+  <nav>
+    <ul class="nav sidebar-menu flex-column">
+      <li class="nav-header">Администрирование</li>
+      <li class="nav-item">
+        <a href="./index.html" class="nav-link">
+          <i class="fa-solid fa-gauge"></i>
+          <span>Мониторинг</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="./info-blocks.html" class="nav-link">
+          <i class="fa-solid fa-square-poll-horizontal"></i>
+          <span>Инфо-блоки</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="./products.html" class="nav-link">
+          <i class="fa-solid fa-boxes-stacked"></i>
+          <span>Товары</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="./categories.html" class="nav-link">
+          <i class="fa-solid fa-list"></i>
+          <span>Категории</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="./tags.html" class="nav-link">
+          <i class="fa-solid fa-tags"></i>
+          <span>Теги</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="text-center admin-logout">
+    <form action="#" method="post">
+      <button type="button">Выйти</button>
+    </form>
+  </div>
+</aside>
+      <main class="app-main">
+        <section class="banner-manager mt-4">
+          <div class="d-flex justify-content-between align-items-start flex-wrap gap-2 mb-3">
+            <div>
+              <h3>Управление баннерами</h3>
+              <p class="muted mb-0">Баннеры главной страницы, порядок и период показа</p>
+            </div>
+            <button type="button" class="btn btn-save">Создать баннер</button>
+          </div>
+          <div class="admin-products-grid">
+            <aside class="product-form">
+              <form action="#" method="post" enctype="multipart/form-data">
+                <h3>Добавить баннер</h3>
+                <div class="mb-3">
+                  <label class="form-label">Название</label>
+                  <input type="text" name="title" class="form-control" placeholder="Главный баннер #1" required>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Ссылка</label>
+                  <input type="url" name="link" class="form-control" placeholder="https://site.ru/catalog.html" required>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Размещение</label>
+                  <select name="placement" class="form-select" required>
+                    <option>Главная — слайдер</option>
+                    <option>Главная — промо-блок</option>
+                    <option>Главная — нижний баннер</option>
+                  </select>
+                </div>
+                <div class="row g-2 mb-3">
+                  <div class="col-md-6">
+                    <label class="form-label">Дата старта</label>
+                    <input type="date" name="start" class="form-control" value="2026-03-01">
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">Дата окончания</label>
+                    <input type="date" name="end" class="form-control" value="2026-03-31">
+                  </div>
+                </div>
+                <div class="mb-3 image">
+                  <label class="form-label">Изображение</label>
+                  <input type="file" accept="image/jpeg,image/png,image/webp">
+                  <div class="form-text">jpg, png, webp ≤ 4 МБ, мин. 1200×400</div>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Статус</label>
+                  <select name="status" class="form-select">
+                    <option>Активен</option>
+                    <option>Скрыт</option>
+                    <option>Черновик</option>
+                  </select>
+                </div>
+                <button type="button" class="btn btn-save">Сохранить</button>
+              </form>
+            </aside>
+            <main class="product-list">
+              <div class="list-header">
+                <h3>Список баннеров</h3>
+                <div class="search-box">
+                  <input type="text" placeholder="Поиск по баннерам...">
+                </div>
+              </div>
+              <div class="product-table">
+                <div class="product-row">
+                  <div class="product-main">
+                    <img src="../imgs/technical/main_banner.png" alt="Главный баннер" style="width: 160px; height: 90px; object-fit: cover; border-radius: 8px;">
+                    <div>
+                      <span class="muted">ID: BN-01</span>
+                      <strong class="product-title d-block">Слайдер “Уют в каждой детали”</strong>
+                      <div class="muted">/catalog.html</div>
+                    </div>
+                  </div>
+                  <div class="product-meta">
+                    <span>Главная — слайдер #1</span>
+                    <div class="muted">01.03.2026 — 31.03.2026</div>
+                    <div class="tags">
+                      <span class="tag">Активен</span>
+                      <span class="tag">Приоритет 1</span>
+                    </div>
+                  </div>
+                  <div class="product-actions">
+                    <button type="button" title="Вверх"><i class="fa-solid fa-arrow-up"></i></button>
+                    <button type="button" title="Вниз"><i class="fa-solid fa-arrow-down"></i></button>
+                    <a href="#" title="Редактировать"><i class="fa-solid fa-pen"></i></a>
+                    <button type="button" title="Удалить"><i class="fa-solid fa-trash"></i></button>
+                  </div>
+                </div>
+                <div class="product-row">
+                  <div class="product-main">
+                    <img src="../imgs/technical/main_banner_sobaka_tovar.png" alt="Баннер с товаром" style="width: 160px; height: 90px; object-fit: cover; border-radius: 8px;">
+                    <div>
+                      <span class="muted">ID: BN-02</span>
+                      <strong class="product-title d-block">Слайдер “Подарки для друзей”</strong>
+                      <div class="muted">/product.html</div>
+                    </div>
+                  </div>
+                  <div class="product-meta">
+                    <span>Главная — слайдер #2</span>
+                    <div class="muted">10.03.2026 — 10.04.2026</div>
+                    <div class="tags">
+                      <span class="tag">Активен</span>
+                      <span class="tag">Приоритет 2</span>
+                    </div>
+                  </div>
+                  <div class="product-actions">
+                    <button type="button" title="Вверх"><i class="fa-solid fa-arrow-up"></i></button>
+                    <button type="button" title="Вниз"><i class="fa-solid fa-arrow-down"></i></button>
+                    <a href="#" title="Редактировать"><i class="fa-solid fa-pen"></i></a>
+                    <button type="button" title="Удалить"><i class="fa-solid fa-trash"></i></button>
+                  </div>
+                </div>
+                <div class="product-row">
+                  <div class="product-main">
+                    <img src="../imgs/technical/you-ideas-banner.png" alt="Индивидуальные изделия" style="width: 160px; height: 90px; object-fit: cover; border-radius: 8px;">
+                    <div>
+                      <span class="muted">ID: BN-03</span>
+                      <strong class="product-title d-block">Баннер “Создаём по вашим идеям”</strong>
+                      <div class="muted">/contacts.html</div>
+                    </div>
+                  </div>
+                  <div class="product-meta">
+                    <span>Главная — промо-блок</span>
+                    <div class="muted">01.02.2026 — 30.04.2026</div>
+                    <div class="tags">
+                      <span class="tag">Активен</span>
+                      <span class="tag">Промо</span>
+                    </div>
+                  </div>
+                  <div class="product-actions">
+                    <button type="button" title="Вверх"><i class="fa-solid fa-arrow-up"></i></button>
+                    <button type="button" title="Вниз"><i class="fa-solid fa-arrow-down"></i></button>
+                    <a href="#" title="Редактировать"><i class="fa-solid fa-pen"></i></a>
+                    <button type="button" title="Скрыть"><i class="fa-solid fa-eye-slash"></i></button>
+                  </div>
+                </div>
+              </div>
+              <div class="pagination">
+                <li class="page-item disabled"><span>«</span></li>
+                <li class="page-item active"><span>1</span></li>
+                <li class="page-item"><a href="#">2</a></li>
+                <li class="page-item"><a href="#">3</a></li>
+                <li class="page-item"><a href="#">»</a></li>
+              </div>
+            </main>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script src="../js/adminlte.js"></script>
+    <script src="../js/sidebar-resize.js"></script>
+  </body>
+</html>

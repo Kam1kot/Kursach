@@ -1,0 +1,270 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Geek-Print33 | Регистрация</title>
+  <link rel="icon" href="./imgs/technical/favicon.png">
+  <base href="./">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+    .indie-flower-regular {
+      font-family: "Indie Flower", cursive;
+      font-weight: 400;
+      font-style: normal;
+    }
+  </style>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.11.0/styles/overlayscrollbars.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/apexcharts@3.37.1/dist/apexcharts.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsvectormap@1.5.3/dist/css/jsvectormap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.2/cropper.min.css">
+  <link rel="preload" href="./css/adminlte.css" as="style">
+  <link rel="stylesheet" href="./css/adminlte.min.css">
+  <link rel="stylesheet" href="./css/adminlte.css">
+  <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="./css/media.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  <div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="cookieToast" class="toast" role="alert" aria-live="polite" aria-atomic="true" data-bs-autohide="false">
+      <div class="toast-header">
+        <strong class="me-auto">Cookie</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Закрыть"></button>
+      </div>
+      <div class="toast-body">
+        <div>
+          Мы используем cookie-файлы для корректной работы сайта. Продолжая пользоваться сайтом, вы соглашаетесь с их использованием.
+          <a href="./privacy.html" class="text-decoration-underline">Подробнее</a>
+        </div>
+        <div class="mt-2 pt-2 border-top text-end">
+          <button class="btn btn-primary btn-sm" id="cookieAccept">Понятно</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <aside class="sidebar" id="mainSidebar">
+    <div class="logo">
+      <img width="25" style="height: 40px !important;" loading="lazy" src="./imgs/technical/logo.png" alt="Логотип">
+      <a class="indie-flower-regular fs-1 fw-bold text-nowrap" href="./index.html"><span class="title-geek">Geek</span>-Print33</a>
+    </div>
+    <nav>
+      <ul class="nav sidebar-menu flex-column" data-lte-toggle="treeview" role="navigation" data-accordion="false" id="navigation">
+        <li class="nav-item">
+          <a href="./index.html" class="nav-link">
+            <i class="fa-solid fa-house-chimney"></i>
+            <p>Главная</p>
+          </a>
+        </li>
+        <li class="nav-item sidebar-cart d-none">
+          <a href="./cart.html" class="nav-link position-relative">
+            <i class="fa-solid fa-basket-shopping"></i>
+          </a>
+        </li>
+        <li class="nav-item sidebar-wishlist d-none">
+          <a href="./wishlist.html" class="nav-link">
+            <i class="fa-solid fa-heart"></i>
+          </a>
+        </li>
+        <li class="nav-item menu-open">
+          <a class="nav-link">
+            <i class="fa-solid fa-align-justify"></i>
+            <p>Каталог <i class="nav-arrow bi bi-chevron-right"></i></p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="./catalog.html" class="nav-link">
+                <i class="fa-solid fa-arrow-right-long"></i>
+                <p>Все</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="./catalog.html#figures" class="nav-link">
+                <i class="fa-solid fa-arrow-right-long"></i>
+                <p>Фигурки</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="./catalog.html#accessories" class="nav-link">
+                <i class="fa-solid fa-arrow-right-long"></i>
+                <p>Аксессуары</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="./catalog.html#decor" class="nav-link">
+                <i class="fa-solid fa-arrow-right-long"></i>
+                <p>Декор</p>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a href="./about.html" class="nav-link">
+            <i class="fa-solid fa-users-between-lines"></i>
+            <p>О нас</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="./delivery.html" class="nav-link">
+            <i class="fa-solid fa-truck"></i>
+            <p>Доставка и оплата</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="./contacts.html" class="nav-link">
+            <i class="fa-solid fa-phone"></i>
+            <p>Контакты</p>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <div class="sidebar-info">
+      <hr>
+      <div class="sidebar-info-inner p-4 text-center">
+        <i class="fa-solid fa-cube"></i>
+        3D-услуги
+      </div>
+    </div>
+  </aside>
+  <header class="topbar">
+    <div class="navbar-wrapper sticky-top">
+      <div class="ms-3 navbar-other">
+        <div class="topbar-act d-flex align-items-center gap-3">
+          <a class="sidebar-toggle-box" data-lte-toggle="sidebar" href="#" role="button">
+            <i class="bi bi-list"></i>
+          </a>
+          <form class="searchForm d-flex align-items-center" action="./catalog.html" method="GET" autocomplete="off" onsubmit="return false;">
+            <input class="form-control" type="text" name="query" id="search-input" placeholder="Поиск по товарам...">
+            <button type="submit" class="btn btn-link text-dark">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </form>
+        </div>
+        <div class="actions d-flex align-items-center gap-2">
+          <button class="account btn btn-link p-0">
+            <a href="./admin/index.html">
+              <i class="fa-solid fa-users-gear"></i>
+              <span class="cart-text">Админ-панель</span>
+            </a>
+          </button>
+          <button class="account btn btn-link p-0">
+            <a href="./account.html">
+              <i class="fa-regular fa-circle-user"></i>
+              <span class="cart-text">Кабинет</span>
+            </a>
+          </button>
+<button class="wishlist btn btn-link p-0">
+            <a href="./wishlist.html">
+              <i class="fa-solid fa-heart"></i>
+            </a>
+          </button>
+          <button class="cart btn btn-link p-0">
+            <a href="./cart.html">
+              <i class="fa-solid fa-basket-shopping"></i>
+            </a>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="content">
+    <main>
+      <div class="content-wrapper auth-page">
+  <div class="auth-card">
+    <div class="mb-4">
+      <h1 class="fs-2 fw-bold">Регистрация</h1>
+      <p class="text-secondary mb-0">Создайте аккаунт, чтобы управлять заказами и получать бонусы.</p>
+    </div>
+    <form class="auth-form" action="#">
+      <div class="mb-3">
+        <label class="form-label" for="regName">Имя и фамилия</label>
+        <input class="form-control" id="regName" type="text" placeholder="Анна Иванова">
+      </div>
+      <div class="mb-3">
+        <label class="form-label" for="regEmail">Email</label>
+        <input class="form-control" id="regEmail" type="email" placeholder="name@example.com">
+      </div>
+      <div class="mb-3">
+        <label class="form-label" for="regPhone">Телефон</label>
+        <input class="form-control" id="regPhone" type="tel" placeholder="+7 (900) 000-00-00">
+      </div>
+      <div class="mb-3">
+        <label class="form-label" for="regPassword">Пароль</label>
+        <input class="form-control" id="regPassword" type="password" placeholder="Придумайте пароль">
+      </div>
+      <div class="mb-3">
+        <label class="form-label" for="regPasswordRepeat">Повторите пароль</label>
+        <input class="form-control" id="regPasswordRepeat" type="password" placeholder="Повторите пароль">
+      </div>
+      <div class="form-check mb-3">
+        <input class="form-check-input" type="checkbox" id="agreePolicy">
+        <label class="form-check-label" for="agreePolicy">Согласен с политикой конфиденциальности</label>
+      </div>
+      <button class="btn btn-warning w-100 fw-bold" type="button">Создать аккаунт</button>
+    </form>
+    <div class="auth-divider"><span>или</span></div>
+    <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
+      <span class="text-secondary">Уже есть аккаунт?</span>
+      <a class="auth-link fw-bold" href="./login.html">Войти</a>
+    </div>
+  </div>
+  <div class="auth-aside">
+    <h2 class="fs-4 fw-bold">После регистрации</h2>
+    <p class="text-secondary">Станьте участником сообщества Geek-Print33 и получайте бонусы.</p>
+    <div class="auth-benefit">
+      <i class="fa-solid fa-gift"></i>
+      <div>
+        <div class="fw-bold">Бонусы и скидки</div>
+        <div class="text-secondary">Личные предложения и подарки для постоянных клиентов.</div>
+      </div>
+    </div>
+    <div class="auth-benefit">
+      <i class="fa-solid fa-truck"></i>
+      <div>
+        <div class="fw-bold">Быстрое оформление</div>
+        <div class="text-secondary">Автозаполнение адресов и контактных данных.</div>
+      </div>
+    </div>
+    <div class="auth-benefit">
+      <i class="fa-solid fa-star"></i>
+      <div>
+        <div class="fw-bold">Избранное</div>
+        <div class="text-secondary">Сохраняйте понравившиеся товары и наборы.</div>
+      </div>
+    </div>
+  </div>
+</div>
+    </main>
+    <footer>
+      <div class="footer-wrapper">
+        <div class="footer-inner">
+          <div>
+            <a class="w-100" href="./index.html"><span>Главная</span></a>
+            <a class="w-100" href="./about.html"><span>О нас</span></a>
+            <a class="w-100" href="./contacts.html"><span>Контакты</span></a>
+          </div>
+          <div>
+            <a class="w-100" href="./delivery.html"><span>Доставка</span></a>
+            <a class="w-100" href="./delivery.html"><span>Оплата</span></a>
+          </div>
+        </div>
+        <div class="w-100 text-center p-1">
+          <p>© 2024-2025 Geek-print33. Все права защищены.</p>
+          <p>Наш E-mail: Geek-print33@yandex.ru</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <script src="./js/adminlte.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+  <script src="./js/swiper.js"></script>
+  <script src="./js/swiper-popularProducts.js"></script>
+  <script src="./js/swiper-products.js"></script>
+  <script src="./js/site.js"></script>
+</body>
+</html>

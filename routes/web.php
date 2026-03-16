@@ -9,6 +9,7 @@ use App\Http\Controllers\MainController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Route;
+
 Route::get('/', [MainController::class, 'index'])->name('main.index');
 
 Route::get('/about-us', [MainController::class, 'about_us'])->name('main.about_us');
@@ -19,8 +20,6 @@ Route::get('/delivery', [MainController::class, 'delivery'])->name('main.deliver
 
 Route::get('/contacts', [MainController::class, 'contacts'])->name('main.contacts');
 
-Route::get('/privacy', [MainController::class, 'privacy'])->name('main.privacy');
-
 Route::get('/feedback', [FeedbackController::class,'feedbackPage'])->name('feedback');
 
 Route::post('/feedback/send', [FeedbackController::class, 'feedbackSend'])->name('feedback.send');
@@ -28,13 +27,11 @@ Route::post('/feedback/send', [FeedbackController::class, 'feedbackSend'])->name
 // Роуты продуктов
 Route::prefix('products')->name('products.')->group( function () {
     Route::get('/', Product\IndexController::class)->name('index');
-    
-    Route::get('/create', Product\CreateController::class)->name('create');
     Route::post('/', Product\StoreController::class)->name('store');
+    Route::get('/create', Product\CreateController::class)->name('create');
     Route::get('/{product}/edit', Product\EditController::class)->name('edit');
     Route::put('/{product}', Product\UpdateController::class)->name('update');
     Route::get('/{product}', Product\ShowController::class)->name('show');
-
 
     Route::delete('/product-image/{image}', Product\DeleteImageController::class)->name('image.delete');
     Route::delete('/{product}',Product\DeleteController::class)->name('delete');
@@ -72,7 +69,6 @@ Route::prefix('cart')->name('cart.')->group(function () {
     Route::get('/order/submit', [CartController::class, 'cart_submit'])->name('submit.order');
     Route::post('/order', [CartController::class, 'send_order'])->middleware('throttle:5,10')->name('checkout');
     Route::get('/order/thanks', [CartController::class, 'order_thanks'])->name('thanks.order');
-    // Route::get('/order/thanks', [CheckoutController::class, 'thanks'])->name('checkout.thanks');
 });
 
 // Роуты вишлиста
@@ -84,10 +80,10 @@ Route::prefix(prefix: 'wishlist')->name('wishlist.')->group(function () {
 });
 
 Route::middleware('guest')->group(function () {
-    Route::get('eXkTwLizPNeyNpIIVkoj', [AuthenticatedSessionController::class, 'create'])
+    Route::get('admin', [AuthenticatedSessionController::class, 'create'])
         ->name('login');
 
-    Route::post('/eXkTwLizPNeyNpIIVkoj', [AuthenticatedSessionController::class, 'store']);
+    Route::post('/admin', [AuthenticatedSessionController::class, 'store']);
 });
 
 Route::middleware(['auth'])->group(function () {
@@ -105,23 +101,3 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('manage-tags', [DashboardController::class, 'tag_manage'])->name('manage.tags');
     });
 });
-
-
-
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth', 'verified'])->name('dashboard');
-
-// Route::middleware('auth')->group(function () {
-//     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-//     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-//     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-// });
-
-// Route::middleware('auth')->group(function () {
-//     Route::get('/dashboard', [ProfileController::class, 'edit'])->name('dashboard.edit');
-//     Route::patch('/dashboard', [ProfileController::class, 'update'])->name('dashboard.update');
-//     Route::delete('/dashboard', [ProfileController::class, 'destroy'])->name('dashboard.destroy');
-// });
-
-// require __DIR__.'/auth.php';

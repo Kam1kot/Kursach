@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Geek-Print33 | Админка — Товары</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+      .indie-flower-regular {
+        font-family: "Indie Flower", cursive;
+        font-weight: 400;
+        font-style: normal;
+      }
+    </style>
+    <link rel="stylesheet" href="../css/adminlte.css">
+    <link rel="stylesheet" href="../css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.2/cropper.min.css">
+  </head>
+  <body class="admin">
+    <div class="app-wrapper">
+      
+<aside class="admin-sidebar">
+  <div class="sidebar-brand">
+    <a href="../index.html" class="brand-link">
+      <img src="../imgs/technical/logo.png" class="brand-image" alt="Логотип">
+      <span class="indie-flower-regular fw-bold text-nowrap"><span class="title-geek">Geek</span>-Print33</span>
+    </a>
+  </div>
+
+  <nav>
+    <ul class="nav sidebar-menu flex-column">
+      <li class="nav-header">Администрирование</li>
+      <li class="nav-item">
+        <a href="./index.html" class="nav-link">
+          <i class="fa-solid fa-gauge"></i>
+          <span>Мониторинг</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="./info-blocks.html" class="nav-link">
+          <i class="fa-solid fa-square-poll-horizontal"></i>
+          <span>Инфо-блоки</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="./products.html" class="nav-link">
+          <i class="fa-solid fa-boxes-stacked"></i>
+          <span>Товары</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="./categories.html" class="nav-link">
+          <i class="fa-solid fa-list"></i>
+          <span>Категории</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="./tags.html" class="nav-link">
+          <i class="fa-solid fa-tags"></i>
+          <span>Теги</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="text-center admin-logout">
+    <form action="#" method="post">
+      <button type="button">Выйти</button>
+    </form>
+  </div>
+</aside>
+
+      <main class="app-main">
+        <section class="admin-products">
+  <div class="d-flex justify-content-between">
+    <header class="admin-header-bar">
+      <h1>Управление товарами</h1>
+    </header>
+    <button id="sidebarToggle" class="sidebar-toggle-btn">
+      <i class="fa-solid fa-align-justify"></i>
+    </button>
+  </div>
+  <div class="admin-products-grid">
+    <aside class="product-form">
+      <form action="#" method="post" enctype="multipart/form-data" id="productForm">
+        <h3>Создание товара</h3>
+        <div class="mb-3">
+          <label class="form-label">Название</label>
+          <input type="text" name="title" class="form-control" placeholder="Краб-сувенир" required>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Категория</label>
+          <select name="category" class="form-select" required>
+            <option>Фигурки</option>
+            <option>Аксессуары</option>
+            <option>Декор</option>
+            <option>Интерьер</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Теги</label>
+          <select name="tags" class="form-select" multiple>
+            <option>PLA</option>
+            <option>PETG</option>
+            <option>Подарок</option>
+            <option>LED</option>
+          </select>
+          <div class="form-text">Ctrl+click — выбрать несколько</div>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Краткое описание</label>
+          <textarea name="description" class="form-control" rows="2" placeholder="Короткое описание товара"></textarea>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Цена</label>
+          <input type="text" name="price" class="form-control" placeholder="1 990" required>
+        </div>
+        <div class="mb-1 image">
+          <label class="form-label">Изображения (до 3)</label>
+          <input type="file" id="imageInput" accept="image/jpeg,image/png,image/webp" multiple>
+          <div class="form-text">jpg, jpeg, png, webp ≤ 3 МБ, мин. 600×400</div>
+        </div>
+        <button type="button" class="btn btn-save" id="saveBtn">Сохранить</button>
+      </form>
+    </aside>
+    <main class="product-list">
+      <div class="list-header">
+        <h3>Список товаров</h3>
+        <div class="search-box">
+          <input type="text" placeholder="Поиск…" id="liveSearch">
+          <div id="searchDrop" class="search-drop"></div>
+        </div>
+      </div>
+      <div class="product-table">
+        <div class="product-row">
+          <div class="product-main">
+            <img src="../imgs/products/crab.jpg" alt="Краб-сувенир">
+            <div>
+              <div class="product-main">
+                <span class="muted">ID: 124</span>
+              </div>
+              <strong class="product-title">Краб-сувенир</strong>
+              <div class="muted">Фигурки</div>
+            </div>
+          </div>
+          <div class="product-meta">
+            <span>1 990 ₽</span>
+            <div class="tags">
+              <span class="tag">PLA</span>
+              <span class="tag">3D-печать</span>
+            </div>
+          </div>
+          <div class="product-actions">
+            <a href="./product-edit.html" title="Редактировать"><i class="fa-solid fa-pen"></i></a>
+            <button type="button" title="Удалить"><i class="fa-solid fa-trash"></i></button>
+          </div>
+        </div>
+        <div class="product-row">
+          <div class="product-main">
+            <img src="../imgs/products/shark.jpg" alt="Акула-брелок">
+            <div>
+              <div class="product-main">
+                <span class="muted">ID: 125</span>
+              </div>
+              <strong class="product-title">Акула-брелок</strong>
+              <div class="muted">Аксессуары</div>
+            </div>
+          </div>
+          <div class="product-meta">
+            <span>2 450 ₽</span>
+            <div class="tags">
+              <span class="tag">PETG</span>
+              <span class="tag">Подарок</span>
+            </div>
+          </div>
+          <div class="product-actions">
+            <a href="./product-edit.html" title="Редактировать"><i class="fa-solid fa-pen"></i></a>
+            <button type="button" title="Удалить"><i class="fa-solid fa-trash"></i></button>
+          </div>
+        </div>
+        <div class="product-row">
+          <div class="product-main">
+            <img src="../imgs/products/octopus.jpg" alt="Осьминог-ночник">
+            <div>
+              <div class="product-main">
+                <span class="muted">ID: 126</span>
+              </div>
+              <strong class="product-title">Осьминог-ночник</strong>
+              <div class="muted">Интерьер</div>
+            </div>
+          </div>
+          <div class="product-meta">
+            <span>1 890 ₽</span>
+            <div class="tags">
+              <span class="tag">LED</span>
+              <span class="tag">Комфорт</span>
+            </div>
+          </div>
+          <div class="product-actions">
+            <a href="./product-edit.html" title="Редактировать"><i class="fa-solid fa-pen"></i></a>
+            <button type="button" title="Удалить"><i class="fa-solid fa-trash"></i></button>
+          </div>
+        </div>
+      </div>
+      <div class="pagination">
+        <li class="page-item disabled"><span>«</span></li>
+        <li class="page-item active"><span>1</span></li>
+        <li class="page-item"><a href="#">2</a></li>
+        <li class="page-item"><a href="#">3</a></li>
+        <li class="page-item"><a href="#">»</a></li>
+      </div>
+    </main>
+  </div>
+</section>
+      </main>
+    </div>
+    <script src="../js/adminlte.js"></script>
+    <script src="../js/sidebar-resize.js"></script>
+  </body>
+</html>

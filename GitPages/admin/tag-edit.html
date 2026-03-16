@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Geek-Print33 | Админка — Редактирование тега</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+      .indie-flower-regular {
+        font-family: "Indie Flower", cursive;
+        font-weight: 400;
+        font-style: normal;
+      }
+    </style>
+    <link rel="stylesheet" href="../css/adminlte.css">
+    <link rel="stylesheet" href="../css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.2/cropper.min.css">
+  </head>
+  <body class="admin">
+    <div class="app-wrapper">
+      
+<aside class="admin-sidebar">
+  <div class="sidebar-brand">
+    <a href="../index.html" class="brand-link">
+      <img src="../imgs/technical/logo.png" class="brand-image" alt="Логотип">
+      <span class="indie-flower-regular fw-bold text-nowrap"><span class="title-geek">Geek</span>-Print33</span>
+    </a>
+  </div>
+
+  <nav>
+    <ul class="nav sidebar-menu flex-column">
+      <li class="nav-header">Администрирование</li>
+      <li class="nav-item">
+        <a href="./index.html" class="nav-link">
+          <i class="fa-solid fa-gauge"></i>
+          <span>Мониторинг</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="./info-blocks.html" class="nav-link">
+          <i class="fa-solid fa-square-poll-horizontal"></i>
+          <span>Инфо-блоки</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="./products.html" class="nav-link">
+          <i class="fa-solid fa-boxes-stacked"></i>
+          <span>Товары</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="./categories.html" class="nav-link">
+          <i class="fa-solid fa-list"></i>
+          <span>Категории</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="./tags.html" class="nav-link">
+          <i class="fa-solid fa-tags"></i>
+          <span>Теги</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="text-center admin-logout">
+    <form action="#" method="post">
+      <button type="button">Выйти</button>
+    </form>
+  </div>
+</aside>
+
+      <main class="app-main">
+        <section class="admin-products">
+  <div class="d-flex justify-content-between align-items-center">
+    <header class="admin-header-bar">
+      <h1>Редактирование тега</h1>
+    </header>
+    <button id="sidebarToggle" class="sidebar-toggle-btn">
+      <i class="fa-solid fa-align-justify"></i>
+    </button>
+  </div>
+  <div class="admin-products-grid">
+    <aside class="product-form">
+      <form action="#" method="post">
+        <h3>Тег</h3>
+        <div class="mb-3">
+          <label class="form-label">Название</label>
+          <input type="text" class="form-control" value="PLA" required>
+        </div>
+        <button type="button" class="btn btn-primary">Сохранить</button>
+      </form>
+    </aside>
+    <div class="card">
+      <h3 class="mb-2">Примеры</h3>
+      <p class="muted">PLA, PETG, LED, Подарок — используйте короткие названия без пробелов.</p>
+    </div>
+  </div>
+</section>
+      </main>
+    </div>
+    <script src="../js/adminlte.js"></script>
+    <script src="../js/sidebar-resize.js"></script>
+  </body>
+</html>

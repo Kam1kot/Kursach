@@ -255,7 +255,7 @@
                 </div>
                 <div>
                     <a class="w-100" href="{{ route('main.delivery') }}"><span>Доставка</span></a>
-                    <a class="w-100" href="{{ route('main.delivery') }}"><span>Оплата</span></a>
+                    <a class="w-%00" href="{{ route('main.delivery') }}"><span>Оплата</span></a>
                     <a class="d-flex flex-column" href="{{ route('main.privacy') }}"><span>Политика</span>Конфиденциальности</a>
                 </div>
             </div>
