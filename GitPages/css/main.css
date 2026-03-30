@@ -189,6 +189,18 @@ input:-internal-autofill-selected {
     align-items: center;
     gap: 2rem;
 }
+.topbar-logo {
+    display: none;
+    align-items: center;
+    gap: 0.6rem;
+    color: white !important;
+    font-size: 1.35rem;
+}
+.topbar-logo img {
+    width: 24px;
+    height: 34px;
+    object-fit: contain;
+}
 .topbar .cart {
     display: flex;
     align-items: center;
@@ -271,6 +283,12 @@ input:-internal-autofill-selected {
     position: relative;
     min-width: 47rem;
     margin-left: 3rem;
+}
+.sidebar-collapsed ~ .topbar .topbar-logo {
+    display: inline-flex;
+}
+.sidebar-collapsed ~ .topbar .searchForm {
+    margin-left: 0.75rem;
 }
 .navbar-wrapper .searchForm input::placeholder {
     color: white;
@@ -427,6 +445,7 @@ input:-internal-autofill-selected {
 }
 .content .banner-wrapper {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     padding: 0.5rem;
 }
@@ -1596,17 +1615,19 @@ input:-internal-autofill-selected {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    width: 90%;
+    width: 100%;
     min-height: 15rem;
 
     padding: 0.5rem;
 }
 .op-details {
     text-align: center;
+    width: 100%;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    align-items: center;
 }
 .op-img img {
     width: 100% !important;
@@ -1615,7 +1636,8 @@ input:-internal-autofill-selected {
     border-radius: 10px !important;
 }
 .op-details h2 {
-    word-break: break-all;
+    word-break: normal;
+    overflow-wrap: anywhere;
     font-size: 1.2em;
 }
 .op-details h3 {
@@ -1643,6 +1665,8 @@ input:-internal-autofill-selected {
     transform: scale(0.8);
 }
 .other-prds .swiper .swiper-slide {
+    display: flex;
+    justify-content: center;
     border-right: 0.2px solid rgba(128, 128, 128, 0.233);
 }
 .other-prds .swiper .swiper-slide:last-child {
@@ -1830,7 +1854,6 @@ footer .footer-inner div a:hover {
     font-size: 2.5rem;
 }
 .content-wrapper.cart .table-responsive {
-    background: #fff;
     border-radius: 18px;
     padding: 0.75rem;
     box-shadow: 0 18px 45px rgba(0, 0, 0, 0.45);
@@ -1842,10 +1865,18 @@ footer .footer-inner div a:hover {
 }
 .content-wrapper.cart th,
 .content-wrapper.cart td {
+    background-color: inherit;
     padding: 0.9rem 0.75rem;
     border-bottom: 1px solid #e5e5e5;
-    color: #111;
+    color: #e67e20;
     font-size: 1rem;
+}
+.btn-submit {
+    margin-top: 0.5rem;
+    background-color: #e67e20;
+}
+.content-wrapper.cart td {
+    color: white !important;
 }
 .content-wrapper.cart th {
     font-weight: 700;
@@ -1879,7 +1910,6 @@ footer .footer-inner div a:hover {
     font-size: 0.95rem;
     padding: 0.65rem 1.6rem;
     border-radius: 999px;
-    box-shadow: 0 10px 25px rgba(0, 123, 255, 0.45);
 }
 
 /* Авторизация и регистрация */
